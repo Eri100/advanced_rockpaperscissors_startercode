@@ -1,3 +1,5 @@
+/*global $*/
+
 //Class 1:
         // Fork and clone the repo and set up your project workspace and link files
         // Write HTML for your project
@@ -21,10 +23,65 @@
 //GLOBAL VARIABLES
 
 
-
 //FUNCTIONS
 
 
 
 // DOCUMENT READY FUNCTION
+
+$( document ).ready(function() {
+  $("#shoot").click(function(){ 
+          
+ var userChoice="";
+var computerChoice="";
+var winner="";
+
+var choices = ["rock","paper","scissors"];
+
+          
+     userChoice = $("#input").val();
+     
+     $("#userChoice").html(userChoice);
+     
+     var randomIndex = Math.floor(Math.random() * choices.length);
+     computerChoice =  choices[randomIndex];
+     
+     $("#computerChoice").html(computerChoice);
+     
+            if((userChoice === choices[0]) && (computerChoice === choices[1])){    
+                 $("#winner").html("Computer Wins");
+           } 
+           
+           else if((userChoice === choices[0]) && (computerChoice === choices[2])){    
+                 $("#winner").html("User Wins");
+           }
+           else if ((userChoice === choices[0]) && (computerChoice === choices[0])){
+                $("#winner").html("Tie");
+           }
+           else if ((userChoice === choices[1]) && (computerChoice === choices[0])){
+                   $("#winner").html("user Wins");
+           }
+           else if ((userChoice === choices[1]) && (computerChoice === choices[2])){
+                    $("#winner").html("Computer Wins");
+           }
+           else if ((userChoice === choices[1]) && (computerChoice === choices[1])){
+                    $("#winner").html("Tie");
+           }
+            else if ((userChoice === choices[2]) && (computerChoice === choices[1])){
+                    $("#winner").html("Computer Wins");
+           }
+            else if ((userChoice === choices[2]) && (computerChoice === choices[0])){
+                    $("#winner").html("Computer Wins");
+           }
+            else if ((userChoice === choices[2]) && (computerChoice === choices[2])){
+                    $("#winner").html("Tie");
+           }
+});
+});  
+           
+          
+           
+           
+          
+
 
